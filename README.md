@@ -28,8 +28,8 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 ### Links
 
-- Solution URL: [Solution Url](https://your-solution-url.com)
-- Live Site URL: [Site Url](https://your-live-site-url.com)
+- Solution URL: [Solution Url](https://github.com/Yuwen-0/Newsletter-sign-up-form)
+- Live Site URL: [Site Url](https://yuwen-0.github.io/Newsletter-sign-up-form/)
 
 ## My process
 
