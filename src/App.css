@@ -1,4 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap');
+
 *{
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
     margin: 0;
     padding: 0;
+}
+
+:root{
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+    --tomato: hsl(4, 100%, 67%);
+    --body-copy: 16px;
+    --font-roboto: 'Roboto', sans-serif;
+    --font-ubuntu: 'Ubuntu', sans-serif;
+    
+    --font-size-paragraph: 12px;
+    --font-size-title: 39px;
+    --font-size-subtitle: 18px;
+    --font-size-button: 16px;
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+}
+#root{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--charcoal-grey);
+}
+
+.content{
+    transition: all 0.5s;
+    width:680px;
+    height: 451px;
+    scale: 1.2;
+    padding: 15px;
+    border-radius: 27px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:var(--white);
+}
+
+.mainContent{
+    transition: all 0.5s;
+    width: 56%;
+    height: 100%;
+    padding: 40px 40px 40px 40px;
+}
+
+.title{
+    color: var(--dark-slate-grey);
+    font-size: var(--font-size-title);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.description{
+    color: var(--charcoal-grey);
+    font-weight: 600;
+    font-size: var(--font-size-paragraph);
+}
+
+.list{
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.listItem{
+    list-style: none;
+    color: var(--charcoal-grey);
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+.listItem::before{
+    content: '';
+    background-image: url('./assets/images/icon-list.svg');
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 22px;
+    height: 21px;
+    margin-right: 10px;
+}   
+
+.emailInput{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--grey);
+    padding: 10px;
+    color: var(--charcoal-grey);
+    font-size: var(--font-size-paragraph);
+    font-weight: 600;
+    outline: none;
+    transition: all 0.5s;
+    margin-bottom: 20px;
+}
+
+.emailInput::placeholder{
+    color: var(--grey);
+}
+
+.emailInput:focus{
+    border: 1px solid var(--tomato);
+}
+
+.emailInput.invalid{
+    border: 1px solid red;
+    animation: shake 0.5s;
+}
+
+.emailLabel{
+    color: var(--dark-slate-grey);
+    font-size: var(--font-size-paragraph);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.newsLetterImage{
+    background-image: url('./assets/images/illustration-sign-up-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 44%;
+}
+
+.button{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 13px;
+    color: var(--white);
+    background: linear-gradient(to left, tomato,80%, crimson);
+    transition: all 0.5s;
+}
+
+.button:hover{
+    cursor: pointer;
+    transform: translate3d(0, -5px, 0);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);   
+}
+
+.hidden{
+    display: none !important;
+    width: 0px !important;
+}
+
+.Fade{
+    opacity: 0;
+}
+
+.end{
+    padding: 30px 50px;
+    height: 380px;
+    width: 360px;
+}
+
+.image{
+    position:absolute;
+    top: 30px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.endButton{
+    position: absolute !important;
+    bottom: 30px;
+    right: 50px;
+    width: 73%;
+}
+
+.endContent{
+    transition: all 0.3s;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+    
+    40%, 60% {
+      transform: translate3d(2px, 0, 0);
+    }
+    
 }

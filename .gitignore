@@ -22,4 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-newsletter-sign-up-with-success-message-main/
+newsletter-sign-up-with-success-message-main
+dist
