@@ -1,6 +1,8 @@
 import './App.css'
 import { useRef, useState } from 'react'
 import Success from "./assets/images/icon-success.svg";
+import FormContent from './FormContent';
+import End from './End';
 
 function App() {
   const Input = useRef(null);
@@ -43,47 +45,12 @@ function App() {
     }
   }
 
-  const FormContent =(<div ref={Content} className='content'>
-    <main ref={Main} className='mainContent'>
-      <h1 className='title'>Stay Updated!</h1>
-      <p className='description'>Join 60.000+ product managers receiving monthly updates on;</p>
-      <ul className='list'>
-        <li className='listItem'>Product discovery and building what matters</li>
-        <li className='listItem'>Measuring to ensure updates are a success</li>
-        <li className='listItem'>And much more!</li>
-      </ul>
-      <label className='emailLabel' htmlFor="emailInput">Email Adress</label>
-      <input
-        onChange={ValidateEmail}
-        ref={Input}
-        placeholder='email@example.com' 
-        className='emailInput' 
-        type="text" 
-        name="emailInput" 
-      />
-      <button 
-        className='button' 
-        onClick={Submit} 
-      >Subscribe to monthly newsletter</button> 
-    </main>
-    <div ref={NewsLetterImage} className='newsLetterImage'>
-    </div>
-  </div>)
-
-  const End = (
-    <div ref={Content} className='content end'>
-      <main ref={endContent} className='endContent Fade'>
-        <img className='image' src={Success} alt='Thank you!' />
-        <h1 className='title'>Thanks for subscribing!</h1>
-        <p className='description'>A confirmation email has been sent to <span className='emailSpan'>{Email}</span>. Please open it and click the button inside to confirm your subscription.</p>
-        <button className='button endButton'>Dismiss message</button>
-      </main>
-    </div>
-  )
-
   return (
     <>
-      {Email == '' ? FormContent : End} 
+      {Email == '' 
+        ? <FormContent Input={Input} ValidateEmail={ValidateEmail} Submit={Submit} Content={Content} Main={Main} NewsLetterImage={NewsLetterImage} /> 
+        : <End Content={Content} endContent={endContent} Email={Email} Success={Success} />
+      } 
     </>
   )
 }
